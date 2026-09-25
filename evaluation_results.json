@@ -1,0 +1,154 @@
+[
+  {
+    "ticker": "AAPL",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All numerical and factual claims (price, market cap, revenue, net income, margins, growth rates, multiples, dates, source) exactly match the provided evidence, and the bull/bear scenarios are presented as conditional hypotheses tied to those figures. No invented data or unsupported assertions appear, and the note correctly flags the period caveat and data gaps without penalty."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response delivers a clear snapshot, detailed financial performance, valuation metrics, bull and bear hypotheses, and explicit data gaps. It includes the price, date, currency, source URL, and retrieval timestamp as required. It also adds appropriate caveats about the one\u2011year price\u2011return window and the unspecified reporting periods, and it avoids any unsupported recommendations or targets."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/AAPL/",
+    "retrieved_utc": "2026-09-25T17:53:38+00:00"
+  },
+  {
+    "ticker": "NVDA",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All specific figures (price, market cap, revenue, net income, margins, growth rates, PE ratios, net debt, etc.) exactly match the values provided in the input JSON, and the source and dates are correctly cited. The note only offers conditional hypotheses in the bull/bear sections, which are grounded in the supplied data, and it explicitly acknowledges the period caveats and missing fields, which the evaluation steps permit. No invented or contradictory claims are present."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response includes a clear snapshot, financial performance table, valuation commentary, bull and bear hypotheses, and a thorough data\u2011gaps section. It displays the price date, source, retrieval time, and currency, and adds caveats about the one\u2011year price\u2011return window and the unspecified reporting periods. No unsupported recommendations or targets are given, meeting all evaluation criteria."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/NVDA/",
+    "retrieved_utc": "2026-09-25T17:54:30+00:00"
+  },
+  {
+    "ticker": "AMZN",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All numerical and factual claims (sector, market cap, price, growth rates, margins, multiples, etc.) exactly match the provided evidence, and the source and period caveat are correctly cited. The bull and bear scenarios are presented as conditional hypotheses tied to the reported data, not unsupported forecasts. Missing period information is acknowledged without penalty. No invented or contradictory information is present."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response delivers a clear snapshot, financial performance, valuation, bull/bear cases, and data gaps for AMZN, includes the price date, currency, source, and retrieval time, and adds appropriate caveats about the one\u2011year return window and period mismatches. It avoids unsupported recommendations or targets, matching all required elements."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/AMZN/",
+    "retrieved_utc": "2026-09-25T17:55:18+00:00"
+  },
+  {
+    "ticker": "META",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All numerical and factual statements (price, market cap, revenue, net income, margins, growth rates, ratios, net debt, source, retrieval time, and period caveat) match the values provided in the input. The note contains only conditional bull/bear hypotheses that are explicitly tied to the reported data, which satisfies the allowance for grounded narratives. No invented figures, events, or unsupported forecasts are present."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response includes a clear snapshot, financial performance and valuation tables, bull and bear hypotheses, and a data gaps section for META. It shows the price date, source, retrieval time, and currency, and even notes the limited price\u2011return window and Yahoo period caveat. No unsupported recommendations or targets are given, and all presented figures come directly from the supplied JSON."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/META/",
+    "retrieved_utc": "2026-09-25T17:56:04+00:00"
+  },
+  {
+    "ticker": "TSM",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All quantitative claims (price, market cap, revenue, net income, margins, growth rates, multiples, net debt) match the provided evidence within rounding, and no invented or contradictory figures appear. The note explicitly flags period uncertainty and lack of audit, satisfying step\u202f4. Bull and bear scenarios are presented as conditional hypotheses tied to the reported data, meeting step\u202f3. Consequently, the response fully aligns with the evaluation criteria."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response delivers a clear snapshot, financial performance table, valuation metrics, bull and bear hypotheses, and a data gaps section exactly as required. It shows the price date, currency, source URL, and retrieval timestamp, and it includes the price\u2011return window and market cap. It adds appropriate caveats about the incomplete one\u2011year return window and the unspecified reporting periods, and it avoids any unsupported recommendations or target prices. All key input fields are used and no relevant values are omitted."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/TSM/",
+    "retrieved_utc": "2026-09-25T17:56:47+00:00"
+  },
+  {
+    "ticker": "AVGO",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All company identifiers, financial figures, ratios, dates, and source citations in the output match the supplied JSON exactly; no invented numbers or events appear. The bull and bear sections are presented as conditional hypotheses tied to the reported data, satisfying the allowance for narrative. The note correctly flags period uncertainties and audit status as indicated in the input. Consequently, the response fully complies with the evaluation criteria."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response delivers a clear snapshot, financial performance, valuation metrics, bull and bear hypotheses, and data gaps exactly as required. It shows the price date, currency, source, and retrieval time, and includes the one\u2011year observation window and period caveats. No unsupported recommendations or targets are given, and all supplied data points are used appropriately."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/AVGO/",
+    "retrieved_utc": "2026-09-25T17:57:37+00:00"
+  },
+  {
+    "ticker": "TSLA",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response faithfully reproduces every numeric and factual detail from the input (e.g., market cap $1.475\u202ftrn, revenue $103.62\u202fbn, trailing P/E 339.48\u00d7) and correctly cites the source and retrieval date. No invented figures or contradictory claims appear, and the bullish/bearish scenarios are presented as conditional hypotheses rather than unsupported assertions. Data gaps are accurately identified, and the period caveat is retained, meeting all evaluation criteria."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response delivers a clear company snapshot with ticker, sector, currency, market cap, price and dates, includes all required financial performance and valuation metrics, presents distinct bull and bear hypotheses, and lists specific data gaps. It shows the price return, source URL, and retrieval timestamp, and adds the appropriate caveat about Yahoo\u2019s reporting periods. No unsupported recommendations or targets are given, and no required figures are omitted."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/TSLA/",
+    "retrieved_utc": "2026-09-25T17:58:28+00:00"
+  },
+  {
+    "ticker": "RELIANCE.NS",
+    "judge_model": "Groq/openai/gpt-oss-120b",
+    "threshold": 0.7,
+    "metrics": {
+      "Evidence grounding": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "All numerical and factual statements (price, market cap, revenue, net income, margins, multiples, growth rates, net debt, source, dates) exactly match the provided JSON data, and the note correctly flags the period caveat. The bull/bear sections are presented as conditional hypotheses tied to the evidence, not unsupported assertions. No invented figures or false claims are present, and missing fields are acknowledged as per the guidelines."
+      },
+      "Research note usefulness": {
+        "score": 1.0,
+        "passed": true,
+        "reason": "The response delivers a clear snapshot, financial performance, valuation discussion, bull and bear hypotheses, and explicitly lists data gaps. It shows the price date, source, retrieval time, and currency, and includes all available metrics while noting the missing free cash flow. It also adds the required caveat about the one\u2011year price return and the Yahoo period disclaimer. No unsupported recommendations or targets are given."
+      }
+    },
+    "source": "https://finance.yahoo.com/quote/RELIANCE.NS/",
+    "retrieved_utc": "2026-09-25T17:59:18+00:00"
+  }
+]
