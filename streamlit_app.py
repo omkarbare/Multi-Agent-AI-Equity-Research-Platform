@@ -1,10 +1,6 @@
-"""App for streamlit cloud deployment.
+"""
+App for streamlit cloud deployment.
 
-Local: pip install -r requirements.txt; python env.py; edit .env;
-       streamlit run streamlit_app.py
-
-There is NO FastAPI dependency: the UI invokes the existing LangGraph pipeline
-in-process. Keep equity_research_groq.py next to this file.
 """
 from __future__ import annotations
 
