@@ -1,6 +1,6 @@
 # AI Equity Research Platform
 
-Multi-Agent AI research workflow that turns a stock ticker into a readable equity research note. It combines a Streamlit interface, a FastAPI backend, a LangGraph analysis pipeline, Yahoo Finance data, and a Groq-hosted language model.
+Multi-Agent AI research workflow that turns a stock ticker into a deatiled equity research report. It combines a Streamlit interface, a FastAPI backend, a LangGraph analysis pipeline, Yahoo Finance data, and a Groq-hosted language model.
 
 **In plain terms:** choose a company, let the app gather available market and company data, review a generated research note, and inspect the numbers behind it. The tool is for research and learning, not investment advice.
 
