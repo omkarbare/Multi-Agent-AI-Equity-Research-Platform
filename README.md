@@ -95,4 +95,3 @@ In the supplied ten-ticker run, **eight tickers had both checks completed and sc
 This is a portfolio-scale prototype rather than a production trading or investment-advice system. To make it more rigorous, add period-dated financial statements and primary filing citations; independently validate key numbers; preserve and test fixed evaluation fixtures; add retry/backoff for upstream rate limits; expand evaluation to sparse-data and adverse cases; and add authentication, monitoring, and operational controls before public deployment.
 
 **Data and security:** The Groq key stays in the backend's environment and is not sent from the browser. The FastAPI server is configured for local use; do not expose it to the public internet without appropriate security controls. Verify important financial figures against primary company disclosures before acting on them.
-# Multi-Agent-AI-Equity-Research-Platform
