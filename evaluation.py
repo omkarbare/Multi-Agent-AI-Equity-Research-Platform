@@ -1,11 +1,5 @@
 """Evaluate the actual fetch -> calculate -> write LangGraph workflow with DeepEval.
 
-Setup:
-    python -m pip install -r requirements.txt
-    python -m pip install deepeval
-    python env.py  # if you have not already created .env
-    # Edit .env and insert your real GROQ_API_KEY.
-
 Run:
     python evaluation.py --tickers AAPL MSFT
     python evaluation.py --tickers RELIANCE.NS
