@@ -1,5 +1,5 @@
 """
-Minimal equity research pipeline: fetch -> calculate -> write.
+Equity research pipeline: fetch -> calculate -> write.
 
 """
 from __future__ import annotations
