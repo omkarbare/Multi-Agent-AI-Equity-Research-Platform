@@ -44,6 +44,20 @@ This is the *simple sequential pipeline* version of the project, not a parallel 
 
 The featured companies are **curated examples**, not a real-time ranking of the ten largest companies. Users can also enter other Yahoo Finance tickers, including NSE symbols such as `RELIANCE.NS`.
 
+## Evaluation: what the results mean
+
+The included `evaluation.py` uses **DeepEval G-Eval**, an AI-as-a-judge approach. For each ticker, it runs the complete pipeline and then asks a Groq judge to assess (1) whether the note is grounded in the data the pipeline supplied and (2) whether it is useful and appropriately caveated. Each check uses a 0.7 passing threshold by default. Run it with:
+
+```bash
+python -m pip install deepeval
+python evaluation.py --tickers AAPL MSFT NVDA GOOGL AMZN META TSM AVGO TSLA RELIANCE.NS
+python eval_json_to_markdown.py evaluation_results.json --output evaluation_table.md
+```
+
+In the supplied ten-ticker run, **eight tickers had both checks completed and scored 1.00 on each**: AAPL, NVDA, AMZN, META, TSM, AVGO, TSLA, and RELIANCE.NS. MSFT received 1.00 for evidence grounding, but its usefulness check did not finish. GOOGL had no completed scores. Both incomplete runs encountered Groq HTTP 429 token-per-minute rate limits; they are **incomplete**, not evidence of poor research quality and not passes. The recorded judge was `Groq/openai/gpt-oss-120b`, and the threshold was 0.7. These are results from the supplied evaluation snapshot, not a claim that every future run will score the same. A practical next step is retry/backoff and pacing between tickers, followed by rerunning the incomplete cases.
+
+> **Important limitation:** The judge compares the report with the Yahoo-derived data supplied to it. A high score does **not** independently verify the source figures against company filings, prove that an investment thesis is correct, or establish performance on a broader benchmark. The current test set is small and contains mostly well-covered companies.
+
 ## Run locally
 
 Use Python 3.10 or newer. From the folder containing the project files:
@@ -55,12 +69,6 @@ python -m pip install -r requirements.txt
 python env.py
 ```
 
-Edit the generated `.env` and replace the placeholder with your Groq API key:
-
-```dotenv
-GROQ_API_KEY=your_actual_groq_api_key
-GROQ_MODEL=llama-3.3-70b-versatile
-```
 
 Start the backend in one terminal:
 
@@ -75,17 +83,3 @@ streamlit run frontend.py
 ```
 
 Streamlit prints the local UI address. The backend's health check is available at `http://127.0.0.1:8000/health`. For a command-line run without the UI, use `python equity_research_groq.py AAPL`. The application needs internet access for Yahoo Finance and Groq. Keep `.env` private and out of version control.
-
-## Evaluation: what the results mean
-
-The included `evaluation.py` uses **DeepEval G-Eval**, an AI-as-a-judge approach. For each ticker, it runs the complete pipeline and then asks a Groq judge to assess (1) whether the note is grounded in the data the pipeline supplied and (2) whether it is useful and appropriately caveated. Each check uses a 0.7 passing threshold by default. Run it with:
-
-```bash
-python -m pip install deepeval
-python evaluation.py --tickers AAPL MSFT NVDA GOOGL AMZN META TSM AVGO TSLA RELIANCE.NS
-python eval_json_to_markdown.py evaluation_results.json --output evaluation_table.md
-```
-
-In the supplied ten-ticker run, **eight tickers had both checks completed and scored 1.00 on each**: AAPL, NVDA, AMZN, META, TSM, AVGO, TSLA, and RELIANCE.NS. MSFT received 1.00 for evidence grounding, but its usefulness check did not finish. GOOGL had no completed scores. Both incomplete runs encountered Groq HTTP 429 token-per-minute rate limits; they are **incomplete**, not evidence of poor research quality and not passes. The recorded judge was `Groq/openai/gpt-oss-120b`, and the threshold was 0.7. These are results from the supplied evaluation snapshot, not a claim that every future run will score the same. A practical next step is retry/backoff and pacing between tickers, followed by rerunning the incomplete cases.
-
-> **Important limitation:** The judge compares the report with the Yahoo-derived data supplied to it. A high score does **not** independently verify the source figures against company filings, prove that an investment thesis is correct, or establish performance on a broader benchmark. The current test set is small and contains mostly well-covered companies.
