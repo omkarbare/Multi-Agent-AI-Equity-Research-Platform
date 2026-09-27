@@ -211,6 +211,3 @@ if result:
         st.json(m)
         st.download_button("Download inputs (.json)", json.dumps(m, indent=2, default=str),
                            file_name=f"{ticker}_inputs.json", mime="application/json")
-
-st.divider()
-st.caption("Research support only · Check figures against company filings · Not investment advice")
