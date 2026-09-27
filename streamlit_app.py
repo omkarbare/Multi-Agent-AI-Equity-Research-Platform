@@ -159,9 +159,6 @@ with st.form("ticker_form"):
         submitted = st.form_submit_button("Generate report", use_container_width=True)
 selected = ticker_input.strip().upper() if submitted else None
 
-st.markdown('<div class="section">Explore 10 featured companies</div>', unsafe_allow_html=True)
-st.markdown('<div class="muted">Curated examples, not a live market-cap ranking. Click to generate a report.</div>',
-            unsafe_allow_html=True)
 for start in range(0, len(COMPANIES), 2):
     columns = st.columns(2, gap="small")
     for column, (symbol, name, business) in zip(columns, COMPANIES[start:start + 2]):
